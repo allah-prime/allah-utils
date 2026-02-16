@@ -1,0 +1,120 @@
+{
+  "name": "@allahjs/utils",
+  "version": "0.0.1",
+  "description": "A utility library for common JavaScript/TypeScript functions",
+  "main": "dist/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.cjs",
+      "browser": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/esm/core/index.js",
+      "require": "./dist/core.cjs",
+      "browser": "./dist/esm/core/index.js",
+      "default": "./dist/esm/core/index.js"
+    },
+    "./browser": {
+      "types": "./dist/browser/index.d.ts",
+      "import": "./dist/esm/browser/index.js",
+      "require": "./dist/browser.cjs",
+      "browser": "./dist/esm/browser/index.js",
+      "default": "./dist/esm/browser/index.js"
+    },
+    "./request": {
+      "types": "./dist/request/index.d.ts",
+      "import": "./dist/esm/request/index.js",
+      "require": "./dist/request.cjs",
+      "browser": "./dist/esm/request/index.js",
+      "default": "./dist/esm/request/index.js"
+    },
+    "./uniapp": {
+      "types": "./dist/uniapp/index.d.ts",
+      "import": "./dist/esm/uniapp/index.js",
+      "require": "./dist/uniapp.cjs",
+      "browser": "./dist/esm/uniapp/index.js",
+      "default": "./dist/esm/uniapp/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "dev": "rollup -c -w",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build && pnpm run test",
+    "publish:npm": "npm publish --registry=https://registry.npmjs.org/",
+    "publish:dry": "npm publish --dry-run",
+    "docs:dev": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:preview": "dumi preview"
+  },
+  "keywords": [
+    "utils",
+    "utilities",
+    "javascript",
+    "typescript",
+    "library"
+  ],
+  "author": "allahbin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allah-prime/allah-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allah-prime/allah-utils/issues"
+  },
+  "homepage": "https://github.com/allah-prime/allah-utils#readme",
+  "devDependencies": {
+    "@allahjs/eslint": "^0.0.3",
+    "@rollup/plugin-alias": "6.0.0",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-replace": "6.0.3",
+    "@rollup/plugin-typescript": "12.3.0",
+    "@types/crypto-js": "4.2.2",
+    "@types/jest": "30.0.0",
+    "@types/node": "25.2.3",
+    "dumi": "2.4.23",
+    "eslint": "^9.39.2",
+    "globals": "16.5.0",
+    "jest": "30.2.0",
+    "prettier": "^3.8.1",
+    "rimraf": "6.1.3",
+    "rollup": "4.57.1",
+    "rollup-plugin-dts": "6.3.0",
+    "stream-browserify": "3.0.0",
+    "ts-jest": "29.4.6",
+    "tslib": "2.8.1",
+    "typescript": "5.9.3",
+    "util": "0.12.5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "axios": "1.13.5",
+    "crypto-js": "4.2.0",
+    "dayjs": "1.11.19",
+    "jsencrypt": "3.5.4",
+    "uuid": "13.0.0"
+  }
+}
