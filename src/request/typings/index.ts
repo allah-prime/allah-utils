@@ -1,5 +1,3 @@
-import ReqQueue from '../ReqQueue';
-
 /**
  * 接口的配置
  */

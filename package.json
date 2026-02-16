@@ -82,6 +82,14 @@
     "url": "https://github.com/allah-prime/allah-utils/issues"
   },
   "homepage": "https://github.com/allah-prime/allah-utils#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "9.39.2"
+    }
+  },
   "devDependencies": {
     "@allahjs/eslint": "^0.0.3",
     "@rollup/plugin-alias": "6.0.0",

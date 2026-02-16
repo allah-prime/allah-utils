@@ -25,6 +25,7 @@ export default [
         dir: 'dist',
         format: 'cjs',
         sourcemap: true,
+        exports: 'named',
         entryFileNames: (chunkInfo) => {
           // 保持原目录结构，CommonJS 使用 .cjs 扩展名
           const name = chunkInfo.name;
@@ -41,6 +42,7 @@ export default [
         dir: 'dist/esm',
         format: 'esm',
         sourcemap: true,
+        exports: 'named',
         entryFileNames: (chunkInfo) => {
           // 保持原目录结构
           const name = chunkInfo.name;
@@ -85,6 +87,7 @@ export default [
         declaration: false, // 禁用 TypeScript 插件的声明文件生成
         declarationMap: false, // 禁用声明映射文件
         outDir: null, // 让 Rollup 处理输出目录
+        outputToFilesystem: false, // 禁用文件系统输出
       }),
     ],
     external: (id) => {
