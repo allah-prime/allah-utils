@@ -2,7 +2,7 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   themeConfig: {
-    name: 'allah-utils',
+    name: 'allahjs-utils',
     footer: 'MIT Licensed | © allah-prime',
     socialLinks: {
       github: 'https://github.com/allah-prime/allah-utils',

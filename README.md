@@ -1,4 +1,4 @@
-# allah-utils
+# allahjs-utils
 
 一个功能丰富的 JavaScript/TypeScript 工具库，提供常用的工具函数，帮助开发者提高开发效率。
 
@@ -14,13 +14,7 @@
 
 ```bash
 # 使用 npm
-npm install allah-utils
-
-# 使用 yarn
-yarn add allah-utils
-
-# 使用 pnpm
-pnpm add allah-utils
+pnpm install @allahjs/utils
 ```
 
 ## 使用方法
@@ -28,7 +22,7 @@ pnpm add allah-utils
 ### 完整导入
 
 ```typescript
-import * as utils from 'allah-utils';
+import * as utils from '@allahjs/utils';
 
 // 使用字符串工具
 const result = utils.capitalize('hello world'); // "Hello world"
@@ -37,7 +31,7 @@ const result = utils.capitalize('hello world'); // "Hello world"
 ### 按需导入
 
 ```typescript
-import { capitalize, formatDate, unique } from 'allah-utils';
+import { capitalize, formatDate, unique } from '@allahjs/utils';
 
 const text = capitalize('hello'); // "Hello"
 const date = formatDate(new Date(), 'YYYY-MM-DD'); // "2024-01-01"
@@ -47,9 +41,9 @@ const arr = unique([1, 2, 2, 3]); // [1, 2, 3]
 ### 分模块导入
 
 ```typescript
-import { capitalize, toCamelCase } from 'allah-utils/string';
-import { unique, chunk } from 'allah-utils/array';
-import { deepClone, merge } from 'allah-utils/object';
+import { capitalize, toCamelCase } from '@allahjs/utils/string';
+import { unique, chunk } from '@allahjs/utils/array';
+import { deepClone, merge } from '@allahjs/utils/object';
 ```
 
 ## API 文档
