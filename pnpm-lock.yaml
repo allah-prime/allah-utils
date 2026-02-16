@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  eslint: 9.39.2
+
 importers:
 
   .:
@@ -56,9 +59,9 @@ importers:
         version: 25.2.3
       dumi:
         specifier: 2.4.23
-        version: 2.4.23(@babel/core@7.29.0)(@swc/helpers@0.5.15)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
+        version: 2.4.23(@babel/core@7.29.0)(@swc/helpers@0.5.15)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
       eslint:
-        specifier: ^9.39.2
+        specifier: 9.39.2
         version: 9.39.2(jiti@2.6.1)
       globals:
         specifier: 16.5.0
@@ -140,7 +143,7 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
-      eslint: ^7.5.0 || ^8.0.0
+      eslint: 9.39.2
 
   '@babel/generator@7.2.0':
     resolution: {integrity: sha512-BA75MVfRlFQG2EZgFYIwyT1r6xSkwfP2bdkY/kLZusEYWiJs4xCowab/alaEaT0wSvmVuXGqiefeBlP+7V1yKg==}
@@ -696,7 +699,7 @@ packages:
     resolution: {integrity: sha512-phrYmNiYppR7znFEdqgfWHXR6NCkZEK7hwWDHZUjit/2/U0r6XvkDl0SYnoM51Hq7FhCGdLDT6zxCCOY1hexsQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
+      eslint: 9.39.2
 
   '@eslint-community/regexpp@4.12.2':
     resolution: {integrity: sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew==}
@@ -706,7 +709,7 @@ packages:
     resolution: {integrity: sha512-T9AfE1G1uv4wwq94ozgTGio5EUQBqAVe1X9qsQtSNVEYW6j3hvtZVm8Smr4qL1qDPFg+lOB2cL5RxTRMzq4CTA==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
     peerDependencies:
-      eslint: ^8.40 || 9
+      eslint: 9.39.2
     peerDependenciesMeta:
       eslint:
         optional: true
@@ -1765,7 +1768,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^5.0.0
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      eslint: 9.39.2
       typescript: '*'
     peerDependenciesMeta:
       typescript:
@@ -1776,14 +1779,14 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       '@typescript-eslint/parser': ^8.52.0
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: 9.39.2
       typescript: '>=4.8.4 <6.0.0'
 
   '@typescript-eslint/parser@5.62.0':
     resolution: {integrity: sha512-VlJEV0fOQ7BExOsHYAGrgbEiZoi8D+Bl2+f6V2RrXerRSylnp+ZBHmPvaIa8cz0Ajx7WO7Z5RqfgYg7ED1nRhA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      eslint: 9.39.2
       typescript: '*'
     peerDependenciesMeta:
       typescript:
@@ -1793,7 +1796,7 @@ packages:
     resolution: {integrity: sha512-iIACsx8pxRnguSYhHiMn2PvhvfpopO9FXHyn1mG5txZIsAaB6F0KwbFnUQN3KCiG3Jcuad/Cao2FAs1Wp7vAyg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: 9.39.2
       typescript: '>=4.8.4 <6.0.0'
 
   '@typescript-eslint/project-service@8.52.0':
@@ -1820,7 +1823,7 @@ packages:
     resolution: {integrity: sha512-xsSQreu+VnfbqQpW5vnCJdq1Z3Q0U31qiWmRhr98ONQmcp/yhiPJFPq8MXiJVLiksmOKSjIldZzkebzHuCGzew==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: '*'
+      eslint: 9.39.2
       typescript: '*'
     peerDependenciesMeta:
       typescript:
@@ -1830,7 +1833,7 @@ packages:
     resolution: {integrity: sha512-JD3wKBRWglYRQkAtsyGz1AewDu3mTc7NtRjR/ceTyGoPqmdS5oCdx/oZMWD5Zuqmo6/MpsYs0wp6axNt88/2EQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: 9.39.2
       typescript: '>=4.8.4 <6.0.0'
 
   '@typescript-eslint/types@5.62.0':
@@ -1860,13 +1863,13 @@ packages:
     resolution: {integrity: sha512-n8oxjeb5aIbPFEtmQxQYOLI0i9n5ySBEY/ZEHHZqKQSFnxio1rv6dthascc9dLuwrL0RC5mPCxB7vnAVGAYWAQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      eslint: 9.39.2
 
   '@typescript-eslint/utils@8.52.0':
     resolution: {integrity: sha512-wYndVMWkweqHpEpwPhwqE2lnD2DxC6WVLupU/DOt/0/v+/+iQbbzO3jOHjmBMnhu0DgLULvOaU4h4pwHYi2oRQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: 9.39.2
       typescript: '>=4.8.4 <6.0.0'
 
   '@typescript-eslint/visitor-keys@5.62.0':
@@ -3498,14 +3501,14 @@ packages:
     resolution: {integrity: sha512-82GZUjRS0p/jganf6q1rEO25VSoHH0hKPCTrgillPjdI/3bgBhAE1QzHrHTizjpRvy6pGAvKjDJtk2pF9NDq8w==}
     hasBin: true
     peerDependencies:
-      eslint: '>=7.0.0'
+      eslint: 9.39.2
 
   eslint-plugin-jest@27.2.3:
     resolution: {integrity: sha512-sRLlSCpICzWuje66Gl9zvdF6mwD5X86I4u55hJyFBsxYOsBCmT5+kSUjf+fkFWVMMgpzNEupjW8WzUqi83hJAQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0 || ^6.0.0
-      eslint: ^7.0.0 || ^8.0.0
+      eslint: 9.39.2
       jest: '*'
     peerDependenciesMeta:
       '@typescript-eslint/eslint-plugin':
@@ -3517,25 +3520,25 @@ packages:
     resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
     engines: {node: '>=10'}
     peerDependencies:
-      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+      eslint: 9.39.2
 
   eslint-plugin-react-hooks@7.0.1:
     resolution: {integrity: sha512-O0d0m04evaNzEPoSW+59Mezf8Qt0InfgGIBJnpC0h3NH/WjUAR7BIKUfysC6todmtiZ/A0oUVS8Gce0WhBrHsA==}
     engines: {node: '>=18'}
     peerDependencies:
-      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
+      eslint: 9.39.2
 
   eslint-plugin-react@7.33.2:
     resolution: {integrity: sha512-73QQMKALArI8/7xGLNI/3LylrEYrlKZSb5C9+q3OtOewTnMQi5cT+aE9E41sLCmli3I9PGGmD1yiZydyo4FEPw==}
     engines: {node: '>=4'}
     peerDependencies:
-      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
+      eslint: 9.39.2
 
   eslint-plugin-react@7.37.5:
     resolution: {integrity: sha512-Qteup0SqU15kdocexFNAJMvCJEfa2xUKNV4CC1xsVMrIIqEy3SQ/rqyxCWNzfrd3/ldy6HMlD2e0JDVpDg2qIA==}
     engines: {node: '>=4'}
     peerDependencies:
-      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
+      eslint: 9.39.2
 
   eslint-plugin-vue@10.6.2:
     resolution: {integrity: sha512-nA5yUs/B1KmKzvC42fyD0+l9Yd+LtEpVhWRbXuDj0e+ZURcTtyRbMDWUeJmTAh2wC6jC83raS63anNM2YT3NPw==}
@@ -3543,7 +3546,7 @@ packages:
     peerDependencies:
       '@stylistic/eslint-plugin': ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
       '@typescript-eslint/parser': ^7.0.0 || ^8.0.0
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: 9.39.2
       vue-eslint-parser: ^10.0.0
     peerDependenciesMeta:
       '@stylistic/eslint-plugin':
@@ -6982,7 +6985,7 @@ packages:
     resolution: {integrity: sha512-atlQQJ2YkO4pfTVQmQ+wvYQwexPDOIgo+RaVcD7gHgzy/IQA+XTyuxNM9M9TVXvttkF7koBHmcwisKdOAf2EcA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: 9.39.2
       typescript: '>=4.8.4 <6.0.0'
 
   typescript@5.9.3:
@@ -7183,7 +7186,7 @@ packages:
     resolution: {integrity: sha512-Vxi9pJdbN3ZnVGLODVtZ7y4Y2kzAAE2Cm0CZ3ZDRvydVYxZ6VrnBhLikBsRS+dpwj4Jv4UCv21PTEwF5rQ9WXg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
+      eslint: 9.39.2
 
   walker@1.0.8:
     resolution: {integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==}
@@ -9224,11 +9227,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@umijs/bundler-utoopack@4.6.28(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)':
+  '@umijs/bundler-utoopack@4.6.28(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)':
     dependencies:
       '@umijs/bundler-utils': 4.6.28
       '@umijs/bundler-webpack': 4.6.28(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
-      '@utoo/pack': 1.2.7(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)
+      '@utoo/pack': 1.2.7(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)
       compression: 1.8.1
       connect-history-api-fallback: 2.0.0
       cors: 2.8.6
@@ -9264,7 +9267,7 @@ snapshots:
       postcss-preset-env: 7.5.0(postcss@8.5.6)
       rollup-plugin-visualizer: 5.9.0(rollup@4.57.1)
       systemjs: 6.15.1
-      vite: 4.5.2(@types/node@25.2.3)(less@4.5.1)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0)
+      vite: 4.5.2(@types/node@25.2.3)(less@4.1.3)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0)
     transitivePeerDependencies:
       - '@types/node'
       - lightningcss
@@ -9468,7 +9471,7 @@ snapshots:
     dependencies:
       tsx: 3.12.2
 
-  '@umijs/preset-umi@4.6.28(@types/node@25.2.3)(@types/react@19.2.14)(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(lightningcss@1.22.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)':
+  '@umijs/preset-umi@4.6.28(@types/node@25.2.3)(@types/react@19.2.14)(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(lightningcss@1.22.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)':
     dependencies:
       '@iconify/utils': 2.1.1
       '@stagewise/toolbar': 0.6.2
@@ -9478,7 +9481,7 @@ snapshots:
       '@umijs/bundler-esbuild': 4.6.28
       '@umijs/bundler-mako': 0.11.10(postcss@8.5.6)(sass@1.97.3)(typescript@5.9.3)(webpack@5.105.2)
       '@umijs/bundler-utils': 4.6.28
-      '@umijs/bundler-utoopack': 4.6.28(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
+      '@umijs/bundler-utoopack': 4.6.28(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
       '@umijs/bundler-vite': 4.6.28(@types/node@25.2.3)(lightningcss@1.22.1)(postcss@8.5.6)(rollup@4.57.1)(sass@1.97.3)(terser@5.46.0)
       '@umijs/bundler-webpack': 4.6.28(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
       '@umijs/core': 4.6.28
@@ -9683,7 +9686,7 @@ snapshots:
   '@utoo/pack-win32-x64-msvc@1.2.7':
     optional: true
 
-  '@utoo/pack@1.2.7(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)':
+  '@utoo/pack@1.2.7(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(postcss@8.5.6)(resolve-url-loader@5.0.0)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)':
     dependencies:
       '@babel/code-frame': 7.22.5
       '@swc/helpers': 0.5.15
@@ -9691,8 +9694,8 @@ snapshots:
       '@utoo/style-loader': 1.0.1
       domparser-rs: 0.0.5
       find-up: 4.1.0
-      less: 4.5.1
-      less-loader: 12.3.1(less@4.5.1)(webpack@5.105.2)
+      less: 4.1.3
+      less-loader: 12.3.1(less@4.1.3)(webpack@5.105.2)
       nanoid: 3.3.11
       picocolors: 1.1.1
       postcss: 8.5.6
@@ -9722,7 +9725,7 @@ snapshots:
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
       '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.29.0)
       react-refresh: 0.14.2
-      vite: 4.5.2(@types/node@25.2.3)(less@4.5.1)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0)
+      vite: 4.5.2(@types/node@25.2.3)(less@4.1.3)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -10888,7 +10891,7 @@ snapshots:
 
   dumi-assets-types@2.4.14: {}
 
-  dumi@2.4.23(@babel/core@7.29.0)(@swc/helpers@0.5.15)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2):
+  dumi@2.4.23(@babel/core@7.29.0)(@swc/helpers@0.5.15)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2):
     dependencies:
       '@ant-design/icons-svg': 4.4.2
       '@makotot/ghostui': 2.0.0(react@18.3.1)
@@ -10953,7 +10956,7 @@ snapshots:
       sass: 1.97.3
       sitemap: 7.1.2
       sucrase: 3.35.1
-      umi: 4.6.28(@babel/core@7.29.0)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
+      umi: 4.6.28(@babel/core@7.29.0)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
       unified: 10.1.2
       unist-util-visit: 4.1.2
       unist-util-visit-parents: 5.1.3
@@ -12971,6 +12974,12 @@ snapshots:
   kolorist@1.8.0: {}
 
   leac@0.6.0: {}
+
+  less-loader@12.3.1(less@4.1.3)(webpack@5.105.2):
+    dependencies:
+      less: 4.1.3
+    optionalDependencies:
+      webpack: 5.105.2
 
   less-loader@12.3.1(less@4.5.1)(webpack@5.105.2):
     dependencies:
@@ -15630,14 +15639,14 @@ snapshots:
   uglify-js@3.19.3:
     optional: true
 
-  umi@4.6.28(@babel/core@7.29.0)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2):
+  umi@4.6.28(@babel/core@7.29.0)(@types/node@25.2.3)(@types/react@19.2.14)(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(lightningcss@1.22.1)(prettier@3.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(stylelint@14.16.1)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2):
     dependencies:
       '@babel/runtime': 7.23.6
       '@umijs/bundler-utils': 4.6.28
       '@umijs/bundler-webpack': 4.6.28(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
       '@umijs/core': 4.6.28
       '@umijs/lint': 4.6.28(eslint@9.39.2(jiti@2.6.1))(jest@30.2.0(@types/node@25.2.3))(stylelint@14.16.1)(typescript@5.9.3)
-      '@umijs/preset-umi': 4.6.28(@types/node@25.2.3)(@types/react@19.2.14)(less-loader@12.3.1(less@4.5.1)(webpack@5.105.2))(less@4.5.1)(lightningcss@1.22.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
+      '@umijs/preset-umi': 4.6.28(@types/node@25.2.3)(@types/react@19.2.14)(less-loader@12.3.1(less@4.1.3)(webpack@5.105.2))(less@4.1.3)(lightningcss@1.22.1)(resolve-url-loader@5.0.0)(rollup@4.57.1)(sass-loader@16.0.7(sass@1.97.3)(webpack@5.105.2))(sass@1.97.3)(terser@5.46.0)(type-fest@4.41.0)(typescript@5.9.3)(webpack@5.105.2)
       '@umijs/renderer-react': 4.6.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@umijs/server': 4.6.28
       '@umijs/test': 4.6.28(@babel/core@7.29.0)
@@ -15883,7 +15892,7 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite@4.5.2(@types/node@25.2.3)(less@4.5.1)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0):
+  vite@4.5.2(@types/node@25.2.3)(less@4.1.3)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.5.6
@@ -15891,7 +15900,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.2.3
       fsevents: 2.3.3
-      less: 4.5.1
+      less: 4.1.3
       lightningcss: 1.22.1
       sass: 1.97.3
       terser: 5.46.0
