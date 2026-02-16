@@ -215,14 +215,6 @@ export declare type ICallBack = (data: any) => void;
 
 export declare const DEV_LOG: 'show' | undefined;
 
-declare global {
-  interface Window {
-    WebKitMutationObserver?: any;
-    reqQueue: ReqQueue;
-    wx: any;
-  }
-}
-
 /**
  * 缓存数据
  */
