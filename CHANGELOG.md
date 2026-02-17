@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/allah-prime/allah-utils/compare/v1.0.0...v1.1.0) (2026-02-17)
+
+
+### Features
+
+* 更新锁文件 ([f91cb93](https://github.com/allah-prime/allah-utils/commit/f91cb935fe4d46144494276638244435b7f81172))
+* 添加 Copilot 指令文档，更新版本发布信息及配置 ([ac7332e](https://github.com/allah-prime/allah-utils/commit/ac7332e5734e8299e3c2bef8b175f846fc416adb))
+
 # 1.0.0 (2026-02-17)
 
 
