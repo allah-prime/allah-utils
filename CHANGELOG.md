@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/allah-prime/allah-utils/compare/v1.1.0...v1.2.0) (2026-02-17)
+
+
+### Features
+
+* 更新 GitHub 发布配置，细化资产路径 ([b2ef886](https://github.com/allah-prime/allah-utils/commit/b2ef8861d4a4c56773f377e8fd73c6c9f80f1da5))
+
 # [1.1.0](https://github.com/allah-prime/allah-utils/compare/v1.0.0...v1.1.0) (2026-02-17)
 
 
