@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/allah-prime/allah-utils/compare/v1.2.0...v1.3.0) (2026-02-17)
+
+
+### Features
+
+* 更新发布配置，清理旧版本资产并细化资产路径 ([6fca4b3](https://github.com/allah-prime/allah-utils/commit/6fca4b33515d7bb2f5ebfb7601e257a1be5cafd9))
+
 # [1.2.0](https://github.com/allah-prime/allah-utils/compare/v1.1.0...v1.2.0) (2026-02-17)
 
 
