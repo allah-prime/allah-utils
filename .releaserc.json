@@ -32,11 +32,22 @@
       "@semantic-release/github",
       {
         "assets": [
-          "dist/**/*.cjs",
-          "dist/**/*.js",
-          "dist/**/*.d.ts",
-          "dist/**/*.cjs.map",
-          "dist/**/*.js.map"
+          {
+            "path": "dist/index.cjs*",
+            "label": "CommonJS"
+          },
+          {
+            "path": "dist/index.d.ts",
+            "label": "TypeScript Definitions"
+          },
+          {
+            "path": "dist/esm/index.js*",
+            "label": "ES Module"
+          },
+          {
+            "path": "dist/esm/index.d.ts",
+            "label": "ES Module Types"
+          }
         ]
       }
     ]
