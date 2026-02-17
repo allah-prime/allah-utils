@@ -32,9 +32,11 @@
       "@semantic-release/github",
       {
         "assets": [
-          {
-            "path": "dist/**"
-          }
+          "dist/**/*.cjs",
+          "dist/**/*.js",
+          "dist/**/*.d.ts",
+          "dist/**/*.cjs.map",
+          "dist/**/*.js.map"
         ]
       }
     ]
