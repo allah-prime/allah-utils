@@ -63,7 +63,8 @@
     "publish:dry": "npm publish --dry-run",
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
-    "docs:preview": "dumi preview"
+    "docs:preview": "dumi preview",
+    "commit": "cz"
   },
   "keywords": [
     "utils",
@@ -105,6 +106,8 @@
     "@types/crypto-js": "4.2.2",
     "@types/jest": "30.0.0",
     "@types/node": "25.2.3",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog-zh": "^0.0.2",
     "dumi": "2.4.23",
     "eslint": "^9.39.2",
     "globals": "16.5.0",
@@ -130,5 +133,10 @@
     "dayjs": "1.11.19",
     "jsencrypt": "3.5.4",
     "uuid": "13.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog-zh"
+    }
   }
 }
