@@ -2,7 +2,7 @@
 title: PageUtils 分页工具
 description: 提供标准化的分页数据结构定义、Ant Design Table 分页配置生成器及分页临界状态判断工具。
 group:
-  title: 核心工具
+  title: Core
   order: 1
 ---
 

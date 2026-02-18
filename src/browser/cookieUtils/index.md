@@ -1,11 +1,12 @@
 ---
-title: Cookie 工具
+nav: 主要功能
+title: Cookie
 description: 浏览器 Cookie 读写删除的轻量工具集，覆盖设置、获取与清理场景
 group:
-  title: Browser
+  title: 浏览器相关
 ---
 
-## Cookie 工具
+## Cookie
 
 ### 业务场景与意图
 面向浏览器环境的 Cookie 管理能力，覆盖读取、写入、删除与批量清理等常见场景，便于在登录态、偏好配置与埋点标识等场景中统一处理 Cookie。

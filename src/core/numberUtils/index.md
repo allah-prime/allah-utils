@@ -1,9 +1,8 @@
 ---
-title: numberUtils
+title: 数字工具
 description: 提供数字格式化、范围限制、随机数生成、数学计算（GCD/LCM）及单位转换等常用数字处理工具函数。
 group:
-  title: core
-  order: 2
+  title: Core
 ---
 
 ## numberUtils 数字工具

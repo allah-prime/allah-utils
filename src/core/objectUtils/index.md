@@ -1,8 +1,8 @@
 ---
-title: objectUtils
+title: 对象工具
 description: 提供深度克隆、合并、路径访问等对象操作功能的工具集合，简化复杂对象的处理逻辑。
 group:
-  title: core
+  title: Core
   order: 1
 ---
 

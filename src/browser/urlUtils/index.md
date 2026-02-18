@@ -1,11 +1,11 @@
 ---
-title: URL 工具
+title: URL
 description: URL 参数解析与拼接工具集，支持查询串构建、更新与路径拆分
 group:
-  title: Browser
+  title: 浏览器相关
 ---
 
-## URL 工具
+## URL
 
 ### 业务场景与意图
 提供 URL 查询参数的解析、构建与更新能力，帮助在路由、筛选、分享链接与参数同步等场景中稳定处理 URL 数据。
