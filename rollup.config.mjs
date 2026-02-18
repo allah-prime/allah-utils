@@ -83,7 +83,7 @@ export default [
       json(),
       typescript({
         tsconfig: './tsconfig.json',
-        exclude: ['**/*.test.ts', '**/*.spec.ts'],
+        exclude: ['**/*.test.ts', '**/*.spec.ts', '**/demos/**/*.tsx', '**/demo/**/*.tsx'],
         declaration: false, // 禁用 TypeScript 插件的声明文件生成
         declarationMap: false, // 禁用声明映射文件
         outDir: null, // 让 Rollup 处理输出目录
