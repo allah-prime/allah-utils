@@ -48,6 +48,38 @@ import { deepClone, merge } from '@allahjs/utils/object';
 
 ## API 文档
 
+### 请求工具 (Request)
+
+封装了跨平台的 HTTP 请求，根据运行环境自动选择合适的请求库：
+
+| 环境 | `reqEnv` 值 | 底层实现 |
+|------|------------|---------|
+| 浏览器 / Node.js（默认） | `'browser'` | [Axios](https://axios-http.com/) |
+| Fetch | `'fetch'` | 原生 `fetch` API |
+| React Native | `'rn'` | 原生 `fetch` API |
+| UniApp / 微信小程序 | `'uni'` | `uni.request`（通过 Axios 适配器） |
+
+```typescript
+import { request } from '@allahjs/utils';
+
+// POST 请求（默认，使用 Axios）
+const data = await request('/api/list', {
+  params: { pageNum: 1 },
+  manner: 'json'
+});
+
+// GET 请求
+const detail = await request('/api/detail', {
+  method: 'get',
+  params: { id: 1 }
+});
+
+// 指定环境
+await request('/api/data', { reqEnv: 'fetch' });    // 使用 fetch
+await request('/api/data', { reqEnv: 'rn' });       // React Native
+await request('/api/data', { reqEnv: 'uni' });      // UniApp
+```
+
 ### 字符串工具 (String)
 
 - `capitalize(str)` - 首字母大写
