@@ -1,3 +1,6 @@
+import { AppRunModeEnum, StorageKeyEnum } from '../core/constants/systemEnum';
+import storageUtils from '../core/storageUtils';
+
 const loginPath = '/user/login';
 
 export const getJwtToken = (): string | null => {
@@ -7,9 +10,9 @@ export const getJwtToken = (): string | null => {
 // 生成登录地址
 export const buildLoginPath = (isHash: boolean, path: string = loginPath) => {
   if (isHash) {
-    return `${window.location.origin}${window.location.pathname}#${path}`;
+    return `${window?.location.origin}${window?.location.pathname}#${path}`;
   }
-  return `${window.location.origin}${path}`;
+  return `${window?.location.origin}${path}`;
 };
 
 /**
@@ -61,11 +64,19 @@ export interface IInitialUmiState<U = any> {
   /**
    * 当前应用运行的模式 - 正常模式，开发者模式 - 抢先体验模式
    */
-  APP_RUN_MODE: IInitialUmiStateParams['APP_RUN_MODE'];
+  APP_RUN_MODE: IInitialUmiStateParams['otherInfo'];
   /**
    * 其他信息
    */
   otherInfo: IInitialUmiStateParams['otherInfo'];
+  /**
+   * 是否是开发者模式
+   */
+  isDevMode?: IInitialUmiStateParams['isDevMode'];
+  /**
+   * 是否是体验版模式
+   */
+  isAdvancedMode?: IInitialUmiStateParams['isAdvancedMode'];
 }
 
 export type IInitialUmiStateParams = {
@@ -116,7 +127,15 @@ export type IInitialUmiStateParams = {
   /**
    * 当前应用运行的模式 - 正常模式，开发者模式 - 抢先体验模式
    */
-  APP_RUN_MODE?: 'normal' | 'dev' | 'advanced';
+  APP_RUN_MODE?: AppRunModeEnum;
+  /**
+   * 是否是开发者模式
+   */
+  isDevMode?: boolean;
+  /**
+   * 是否是体验版模式
+   */
+  isAdvancedMode?: boolean;
   /**
    * 其他信息
    */
@@ -124,7 +143,6 @@ export type IInitialUmiStateParams = {
 };
 
 /**
- * @deprecated 请使用api-service中的！！！
  * <h3>初始化页面全局状态的方法</h3>
  * <br />
  * 当页面第一次打开的时候，会调用改方法，用于获取用户信息，并且初始化全局状态
@@ -186,6 +204,9 @@ export const initialUmiState = async ({
     }
   };
   const currentUser = await fetchUserInfo();
+
+  // 设置当前的应用模式
+  const appRunMode = storageUtils.getItem(StorageKeyEnum.APP_RUN_MODE) || AppRunModeEnum.normal;
   return {
     fetchUserInfo,
     currentUser,
@@ -193,7 +214,9 @@ export const initialUmiState = async ({
     settings: defaultSettings,
     theme: defaultTheme,
     appInfo,
-    APP_RUN_MODE: 'normal',
+    APP_RUN_MODE: appRunMode,
+    isAdvancedMode: appRunMode === AppRunModeEnum.advanced,
+    isDevMode: appRunMode === AppRunModeEnum.dev,
     otherInfo: {}
   };
 };

@@ -11,6 +11,7 @@ export { default as asyncUtils } from './core/asyncUtils';
 export { default as colorUtils } from './core/colorUtils';
 export { default as cryptoUtils } from './core/cryptoUtils';
 export { default as pageUtils, defTableData } from './core/pageUtils';
+export { default as storageUtils } from './core/storageUtils';
 export type { ITablePage } from './core/pageUtils';
 
 // 浏览器专用工具函数
@@ -24,6 +25,9 @@ export * from './request';
 
 // UniApp 工具函数
 export * from './uniapp';
+
+// UmiJS 工具函数
+export * from './umijs';
 
 // 类型定义
 export * from './types';
