@@ -30,6 +30,9 @@ export * from './uniapp';
 // UmiJS 工具函数
 export * from './umijs';
 
+// Form 工具函数
+export * from './form';
+
 // 类型定义
 export * from './types';
 
