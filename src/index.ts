@@ -20,6 +20,7 @@ export { default as urlUtils } from './browser/urlUtils';
 
 // 请求工具函数
 export { default as request } from './request';
+export * from './request';
 
 // UniApp 工具函数
 export * from './uniapp';

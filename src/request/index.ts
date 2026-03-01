@@ -1,5 +1,6 @@
 import { codeMessage } from './httpCode';
 import { ICacheData, ICallBack, IRequestOption } from './typings';
+export type { IRequestOption, ICacheData, ICallBack };
 import { generateFetchRequest, getRequestUtils, requestErrorIntercept, responseErrorIntercept } from './httpUtils';
 import ReqQueue from './ReqQueue';
 import cryptoUtils from '../core/cryptoUtils';
