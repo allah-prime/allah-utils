@@ -207,6 +207,16 @@ export interface IRequestOption {
    * 替换指定的字段为 -
    */
   resReplaceField?: string[];
+
+  /**
+   * 自定义响应结构配置
+   */
+  responseConfig?: {
+    codeKey?: string; // 状态码字段名，默认 'code'
+    msgKey?: string;  // 消息字段名，默认 'msg'
+    dataKey?: string; // 数据字段名，默认 'result'
+    successCode?: number | string | (number | string)[]; // 成功状态码值，默认 0
+  };
 }
 
 export declare type ICallBack = (data: any) => void;

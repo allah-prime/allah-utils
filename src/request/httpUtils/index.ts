@@ -290,28 +290,48 @@ export const responseErrorIntercept = (
   // 判断是否文件下载
   if (newOptions.isFile) {
     jsonData = data;
-  } else if (Number(data.code) === 0) {
-    // 缓存操作
-    if (newOptions.cacheData && newOptions.cacheKey && typeof sessionStorage !== 'undefined') {
-      newOptions.cacheControl = newOptions.cacheControl || 30000;
-      const cacheData: ICacheData = {
-        // 30秒内不会有新请求出去
-        expires: new Date().getTime() + newOptions.cacheControl,
-        data: data.result
-      };
-      sessionStorage.setItem(newOptions.cacheKey, JSON.stringify(cacheData));
-    }
-    jsonData = data.result;
   } else {
-    const status = data.code || data.status;
-    const errorData = {
-      msg: data.msg || data.errmsg || (codeMessage as any)[status],
-      url,
-      status,
-      code: status,
-      statusText: data.msg
-    };
-    return Promise.reject({ ...data, ...errorData });
+    const {
+      codeKey = 'code',
+      msgKey = 'msg',
+      dataKey = 'result',
+      successCode = 0
+    } = newOptions.responseConfig || {};
+
+    const resCode = data[codeKey];
+    let isSuccess = false;
+
+    if (Array.isArray(successCode)) {
+      isSuccess = successCode.some(c => c == resCode);
+    } else {
+      // eslint-disable-next-line eqeqeq
+      isSuccess = resCode == successCode;
+    }
+
+    if (isSuccess) {
+      // 缓存操作
+      if (newOptions.cacheData && newOptions.cacheKey && typeof sessionStorage !== 'undefined') {
+        newOptions.cacheControl = newOptions.cacheControl || 30000;
+        const cacheData: ICacheData = {
+          // 30秒内不会有新请求出去
+          expires: new Date().getTime() + newOptions.cacheControl,
+          data: data[dataKey]
+        };
+        sessionStorage.setItem(newOptions.cacheKey, JSON.stringify(cacheData));
+      }
+      jsonData = data[dataKey];
+    } else {
+      const status = resCode || data.status;
+      const msg = data[msgKey] || data.errmsg || (codeMessage as any)[status];
+      const errorData = {
+        msg,
+        url,
+        status,
+        code: status,
+        statusText: msg
+      };
+      return Promise.reject({ ...data, ...errorData });
+    }
   }
   if (newOptions.resNullReplace) {
     stringUtils.replaceEmpty(jsonData, newOptions.resNullReplace);
