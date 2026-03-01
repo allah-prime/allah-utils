@@ -255,7 +255,57 @@ const dateUtils = {
       return `${start} 至 -`;
     }
     return `${start} - ${end}`;
-  }
+  },
+  /**
+   * 生成开始时间和结束时间字符串
+   */
+  getStartEndTimeStr: (
+    date: (Dayjs | string | number | undefined)[],
+    type: 'time' | 'day' | 'auto' = 'auto'
+  ): { startDay: string | undefined; endDay: string | undefined } => {
+    const res: { startDay: string | undefined; endDay: string | undefined } = {
+      startDay: undefined,
+      endDay: undefined
+    };
+    if (!date) {
+      return res;
+    }
+    if (date[0]) {
+      res.startDay = dayjs(date[0]).format(type === 'auto' ? templateObj.start : templateObj[type]);
+    }
+    if (date[1]) {
+      res.endDay = dayjs(date[1]).format(type === 'auto' ? templateObj.end : templateObj[type]);
+    }
+    return res;
+  },
+  /**
+   * 生成开始时间和结束时间时间戳
+   */
+  getStartEndTimeUnix: (
+    date: (Dayjs | string | number | undefined)[]
+  ): { startDay: number | undefined; endDay: number | undefined } => {
+    const res: { startDay: number | undefined; endDay: number | undefined } = {
+      startDay: undefined,
+      endDay: undefined
+    };
+    if (!date) {
+      return res;
+    }
+    if (date[0]) {
+      res.startDay = dayjs(date[0]).unix() * 1000;
+    }
+    if (date[1]) {
+      res.endDay = dayjs(date[1]).unix() * 1000;
+    }
+    return res;
+  },
+};
+
+export const templateObj = {
+  day: 'YYYY-MM-DD',
+  time: 'YYYY-MM-DD HH:mm:ss',
+  start: 'YYYY-MM-DD 00:00:00',
+  end: 'YYYY-MM-DD 23:59:59'
 };
 
 export default dateUtils;

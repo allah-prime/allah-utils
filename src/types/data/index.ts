@@ -205,3 +205,26 @@ export interface IWaterLives {
    */
   reporttime: string;
 }
+
+
+/**
+ * antd的tree组件的节点数据
+ */
+export interface ITreeNode {
+  title: string | any;
+  label: string | any;
+  key: string;
+  value: string;
+  /**
+   * 父编码
+   */
+  pcode: string;
+  /**
+   * 是否是叶子节点 true 是叶子节点 false 不是叶子节点
+   */
+  isLeaf: boolean;
+  other?: Record<string, any>;
+  children?: ITreeNode[];
+  loading?: boolean;
+  disabled?: boolean;
+}

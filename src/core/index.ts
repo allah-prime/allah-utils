@@ -10,6 +10,7 @@ import numberUtils from './numberUtils';
 import colorUtils from './colorUtils';
 import dateUtils from './dateUtils';
 import asyncUtils, { AsyncQueue } from './asyncUtils';
+import * as constants from './constants';
 import validationUtils from './validationUtils';
 
 /**
@@ -24,5 +25,6 @@ export default {
   asyncUtils,
   colorUtils,
   validationUtils,
-  AsyncQueue
+  AsyncQueue,
+  constants
 };

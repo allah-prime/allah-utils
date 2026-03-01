@@ -4,7 +4,7 @@
 export { default as stringUtils } from './core/stringUtils';
 export { default as arrayUtils } from './core/arrayUtils';
 export { default as objectUtils } from './core/objectUtils';
-export { default as dateUtils } from './core/dateUtils';
+export { default as dateUtils, templateObj } from './core/dateUtils';
 export { default as numberUtils } from './core/numberUtils';
 export { default as validationUtils } from './core/validationUtils';
 export { default as asyncUtils } from './core/asyncUtils';
@@ -12,6 +12,7 @@ export { default as colorUtils } from './core/colorUtils';
 export { default as cryptoUtils } from './core/cryptoUtils';
 export { default as pageUtils, defTableData } from './core/pageUtils';
 export { default as storageUtils } from './core/storageUtils';
+export * as constants from './core/constants';
 export type { ITablePage } from './core/pageUtils';
 
 // 浏览器专用工具函数

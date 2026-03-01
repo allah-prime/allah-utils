@@ -1,3 +1,5 @@
+import { urlEncode } from '../urlUtils';
+
 /**
  * DOM工具函数（仅在浏览器环境中可用）
  */
@@ -255,6 +257,109 @@ const domUtils = {
         document.head.appendChild(dom);
       }
     });
+  },
+
+  /**
+   * 修改URL的参数
+   * @param urlParams
+   */
+  changeUrlParams(urlParams: any): void {
+    if (!this.isBrowser()) return;
+    const historyParams = urlEncode(urlParams).slice(1);
+    const searchStr = window.location.href;
+    // 问号前面的
+    const url = searchStr.substring(0, searchStr.indexOf('?'));
+    // 不刷新页面 改变url
+    if (historyParams) {
+      window.history.pushState(null, '', `${url}?${historyParams}`);
+    } else {
+      window.history.pushState(null, '', url);
+    }
+  },
+
+  /**
+   * 将vh/vw转换成px
+   * @param value
+   */
+  viewportToPixels(value: string): number {
+    if (!this.isBrowser()) return 0;
+    const parts = value.match(/([0-9.]+)(vh|vw)/);
+    if (parts) {
+      const q = Number(parts[1]);
+      const innerKey = ['innerHeight', 'innerWidth'][
+        ['vh', 'vw'].indexOf(parts[2])
+      ];
+      const side = window[innerKey as 'innerHeight' | 'innerWidth'];
+      return side * (q / 100);
+    }
+    return 0;
+  },
+
+  /**
+   * 获取页面中全部的iframe，以及iframe中的iframe
+   */
+  getAllIframe(
+    iframeDocument?: Document
+  ): HTMLCollectionOf<HTMLElementTagNameMap['iframe']>[] {
+    if (!this.isBrowser()) return [];
+    const iframeArr: HTMLCollectionOf<HTMLElementTagNameMap['iframe']>[] =
+      [] as any;
+    if (iframeDocument) {
+      const iframeList: any = iframeDocument.getElementsByTagName('iframe');
+      for (let i = 0; i < iframeList.length; i++) {
+        iframeArr.push(iframeList[i]);
+        const childIframe = this.getAllIframe(iframeList[i].contentWindow?.document);
+        if (childIframe.length > 0) {
+          iframeArr.push(...childIframe);
+        }
+      }
+    }
+    return iframeArr;
+  },
+
+  /**
+   * 指定元素的拖拽
+   * @param dom 元素的dom
+   */
+  dragDomFunc(dom: HTMLElement): void {
+    if (!this.isBrowser()) return;
+    let time: any = 0;
+    dom.onmousedown = function (event) {
+      time = setTimeout(() => {
+        const ev = event || window.event;
+        event.stopPropagation();
+        const disX = ev.clientX - dom.offsetLeft;
+        const disY = ev.clientY - dom.offsetTop;
+        dom.style.cursor = 'move';
+        document.onmousemove = function (event2) {
+          const ev2 = event2 || window.event;
+          dom.style.left = `${ev2.clientX - disX}px`;
+          dom.style.top = `${ev2.clientY - disY}px`;
+        };
+      }, 300);
+    };
+    dom.onmouseup = function () {
+      clearTimeout(time);
+      document.onmousemove = null;
+      dom.style.cursor = 'default';
+    };
+  },
+
+  /**
+   * 获取当前Chrome浏览器版本
+   * -1 则不是Chrome浏览器
+   */
+  getChromeVersion(): number {
+    if (!this.isBrowser()) return -1;
+    const arr = navigator.userAgent.split(' ');
+    let chromeVersion = '';
+    for (let i = 0; i < arr.length; i++) {
+      if (/chrome/i.test(arr[i])) chromeVersion = arr[i];
+    }
+    if (chromeVersion) {
+      return Number(chromeVersion.split('/')[1].split('.')[0]);
+    }
+    return -1;
   }
 };
 
