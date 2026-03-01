@@ -265,6 +265,25 @@ const cryptoUtils = {
   },
 
   /**
+   * 同步生成 UUID (浏览器端/兼容模式)
+   * 优先使用 crypto.getRandomValues，不支持时回退到 Math.random
+   * @param {boolean} [removeHyphens=true] - 是否移除连字符，默认为 true (保持与 uuid() 一致)
+   * @returns {string} UUID 字符串
+   * @example
+   * ```typescript
+   * const uuid = cryptoUtils.uuidSync();
+   * console.log(uuid); // "550e8400e29b41d4a716446655440000"
+   * 
+   * const standardUuid = cryptoUtils.uuidSync(false);
+   * console.log(standardUuid); // "550e8400-e29b-41d4-a716-446655440000"
+   * ```
+   */
+  uuidSync(removeHyphens: boolean = true): string {
+    const uuid = generateCompatibleUUID();
+    return removeHyphens ? uuid.replace(/-/g, '') : uuid;
+  },
+
+  /**
    * 生成字符串的 MD5 哈希值
    * @param {string} input - 需要进行 MD5 加密的输入字符串
    * @param {string} [salt] - 可选的盐值，用于增强安全性

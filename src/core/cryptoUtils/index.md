@@ -15,6 +15,7 @@ group:
 import cryptoUtils from './index';
 
 const uuid = await cryptoUtils.uuid();
+const uuidSync = cryptoUtils.uuidSync(); // 同步生成 UUID
 const hash = cryptoUtils.md5('hello');
 const encrypted = cryptoUtils.aesEncrypt('secret', 'key123');
 const decrypted = cryptoUtils.aesDecrypt(encrypted, 'key123');
@@ -24,6 +25,7 @@ const decrypted = cryptoUtils.aesDecrypt(encrypted, 'key123');
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | uuid | 生成 UUID v4 | `() => Promise<string>` | - |
+| uuidSync | 同步生成 UUID v4 | `(removeHyphens?: boolean) => string` | `true` |
 | md5 | 生成 MD5 哈希 | `(input: string, salt?: string) => string` | - |
 | miniUuid | 生成 8 位短 UUID | `() => string` | - |
 | isValidUUID | 校验 UUID 格式 | `(uuid: string) => Promise<boolean>` | - |
