@@ -1,5 +1,11 @@
 # allahjs-utils
 
+[![npm version](https://img.shields.io/npm/v/@allahjs/utils.svg?style=flat-square)](https://www.npmjs.com/package/@allahjs/utils)
+[![GitHub stars](https://img.shields.io/github/stars/allah-prime/allah-utils?style=flat-square&logo=github)](https://github.com/allah-prime/allah-utils)
+[![npm downloads](https://img.shields.io/npm/dm/@allahjs/utils.svg?style=flat-square)](https://www.npmjs.com/package/@allahjs/utils)
+[![license](https://img.shields.io/npm/l/@allahjs/utils.svg?style=flat-square)](https://www.npmjs.com/package/@allahjs/utils)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@allahjs/utils?style=flat-square)](https://bundlephobia.com/package/@allahjs/utils)
+
 一个功能丰富的 JavaScript/TypeScript 工具库，提供常用的工具函数，帮助开发者提高开发效率。
 
 ## 特性

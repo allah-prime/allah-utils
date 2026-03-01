@@ -104,7 +104,7 @@
   "bugs": {
     "url": "https://github.com/allah-prime/allah-utils/issues"
   },
-  "homepage": "https://github.com/allah-prime/allah-utils#readme",
+  "homepage": "https://allah-prime.github.io/allah-utils/",
   "publishConfig": {
     "access": "public"
   },
