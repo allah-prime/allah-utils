@@ -60,7 +60,7 @@ export interface IAsyncTaskScheduleVo<T = any> {
   /**
    *文件id
    */
-  zlFileId: string;
+  dbFileId: string;
   /**
    * 错误总数
    */

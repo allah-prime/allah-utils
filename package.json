@@ -16,30 +16,37 @@
     "./core": {
       "types": "./dist/core/index.d.ts",
       "import": "./dist/esm/core/index.js",
-      "require": "./dist/core.cjs",
+      "require": "./dist/core/index.cjs",
       "browser": "./dist/esm/core/index.js",
       "default": "./dist/esm/core/index.js"
     },
     "./browser": {
       "types": "./dist/browser/index.d.ts",
       "import": "./dist/esm/browser/index.js",
-      "require": "./dist/browser.cjs",
+      "require": "./dist/browser/index.cjs",
       "browser": "./dist/esm/browser/index.js",
       "default": "./dist/esm/browser/index.js"
     },
     "./request": {
       "types": "./dist/request/index.d.ts",
       "import": "./dist/esm/request/index.js",
-      "require": "./dist/request.cjs",
+      "require": "./dist/request/index.cjs",
       "browser": "./dist/esm/request/index.js",
       "default": "./dist/esm/request/index.js"
     },
     "./uniapp": {
       "types": "./dist/uniapp/index.d.ts",
       "import": "./dist/esm/uniapp/index.js",
-      "require": "./dist/uniapp.cjs",
+      "require": "./dist/uniapp/index.cjs",
       "browser": "./dist/esm/uniapp/index.js",
       "default": "./dist/esm/uniapp/index.js"
+    },
+    "./form": {
+      "types": "./dist/form/index.d.ts",
+      "import": "./dist/esm/form/index.js",
+      "require": "./dist/form/index.cjs",
+      "browser": "./dist/esm/form/index.js",
+      "default": "./dist/esm/form/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -136,6 +143,7 @@
     "axios": "1.13.5",
     "crypto-js": "4.2.0",
     "dayjs": "1.11.19",
+    "diff": "^8.0.3",
     "jsencrypt": "3.5.4",
     "uuid": "13.0.0"
   },

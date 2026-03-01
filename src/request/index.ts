@@ -40,7 +40,7 @@ const checkStatus = async (response: any, opt: IRequestOption) => {
   return Promise.reject(errorData);
 };
 
-export type IZlResponse = {
+export type IResponse = {
   code: number;
   msg: string;
   message: string;
@@ -53,7 +53,7 @@ export type IZlResponse = {
 const binRequest = async (
   url: string,
   option: IRequestOption = {},
-  errorHandler?: (error: IZlResponse, opt: IRequestOption) => void,
+  errorHandler?: (error: IResponse, opt: IRequestOption) => void,
   callback?: ICallBack
 ): Promise<any> => {
   // 判断是否开启了日志

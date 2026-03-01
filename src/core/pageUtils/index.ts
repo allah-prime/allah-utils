@@ -93,13 +93,36 @@ export const defaultTableData: ITablePage<any> = {
   total: 0
 };
 
+
+/**
+ * 处理请求列表的参数 - 分页和排序参数
+ * @param v 参数
+ * @param sort 排序
+ */
+export const handleReqListParams = (v: any, sort: any) => {
+  if (v.current) {
+    v.pageNum = v.current;
+  }
+  if (sort && Object.keys(sort).length > 0) {
+    const newSort: any = {};
+    Object.keys(sort).forEach(key => {
+      newSort[key] = sort[key] === 'ascend';
+    });
+    v.sort = newSort;
+  }
+  return v;
+};
+
 /**
  * 页面工具对象
  */
 const pageUtils = {
   isLastPageData,
   buildPageConfig,
-  defaultTableData
+  defaultTableData,
+  handleReqListParams
 };
+
+
 
 export default pageUtils;

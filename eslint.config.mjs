@@ -1,7 +1,7 @@
-import thelingConfig from '@allahjs/eslint';
+import allahjsConfig from '@allahjs/eslint';
 
 export default [
-  ...thelingConfig,
+  ...allahjsConfig,
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     rules: {

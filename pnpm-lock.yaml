@@ -20,6 +20,9 @@ importers:
       dayjs:
         specifier: 1.11.19
         version: 1.11.19
+      diff:
+        specifier: ^8.0.3
+        version: 8.0.3
       jsencrypt:
         specifier: 3.5.4
         version: 3.5.4
@@ -3976,6 +3979,10 @@ packages:
 
   diff@5.2.2:
     resolution: {integrity: sha512-vtcDfH3TOjP8UekytvnHH1o1P4FcUdt4eQ1Y+Abap1tk/OB2MWQvcwS2ClCd1zuIhc3JKOx6p3kod8Vfys3E+A==}
+    engines: {node: '>=0.3.1'}
+
+  diff@8.0.3:
+    resolution: {integrity: sha512-qejHi7bcSD4hQAZE0tNAawRK1ZtafHDmMTMkrrIGgSLl7hTnQHmKCeB45xAcbfTqK2zowkM3j3bHt/4b/ARbYQ==}
     engines: {node: '>=0.3.1'}
 
   diffie-hellman@5.0.3:
@@ -13340,6 +13347,8 @@ snapshots:
   detect-node@2.1.0: {}
 
   diff@5.2.2: {}
+
+  diff@8.0.3: {}
 
   diffie-hellman@5.0.3:
     dependencies:

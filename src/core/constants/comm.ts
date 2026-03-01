@@ -40,9 +40,9 @@ export declare type ValueType = SingleValueType | SingleValueType[];
 export type UploadFileStatus = 'error' | 'success' | 'done' | 'uploading' | 'removed' | 'waiting';
 
 /**
- * 权限枚举 - 同后端的 com.theling.common.constant。ZlPermissions
+ * 权限枚举
  */
-export enum ZlPermissionEnum {
+export enum EPermissionEnum {
   /**
    * 公有
    */
@@ -127,7 +127,7 @@ export interface IFileObjVoBase extends UploadFile {
   /**
    * 文件的权限 - 0 公开，1 私有，2 登录后可以查看
    */
-  permission?: ZlPermissionEnum;
+  permission?: EPermissionEnum;
   /**
    * 后缀
    */

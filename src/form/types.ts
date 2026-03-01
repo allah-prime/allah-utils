@@ -1,4 +1,6 @@
 import { IOptions, ITreeNode } from "../types";
+import { BaseRule } from "./rule";
+import { FormItemProps } from "./formItem";
 
 /**
  * JSON规则项配置
@@ -158,7 +160,7 @@ export type FilterFunc = (meta: Meta) => boolean;
  * 可以是任意类型，通常为字符串、数字或它们的数组
  * @template T 路径类型，默认为any
  */
-export type NamePath<T = any> = any;
+export type NamePath = any;
 
 /**
  * 验证选项接口
@@ -263,12 +265,6 @@ export interface FormInstance<Values = any> extends RcFormInstance<Values> {
  */
 
 /**
- * 必填标记类型
- * 用于控制表单项的必填显示方式
- */
-export declare type RequiredMark = boolean | "optional";
-
-/**
  * 尺寸类型
  * 定义组件的大小规格
  */
@@ -284,57 +280,6 @@ export declare type FormFieldType =
   | "formSet"
   | "divider"
   | "dependency";
-
-/**
- * 工具提示属性接口
- * 用于配置提示框的样式和行为
- */
-export interface TooltipProps {
-  /** 样式对象 */
-  style?: any;
-  /** CSS类名 */
-  className?: string;
-  /** 背景颜色 */
-  color?: string;
-  /** 打开状态的CSS类名 */
-  openClassName?: string;
-  /** 箭头是否指向中心 */
-  arrowPointAtCenter?: boolean;
-  /** 是否自动调整溢出 */
-  autoAdjustOverflow?: boolean;
-  /** 获取弹出容器的函数 */
-  getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
-  /** 子元素 */
-  children?: any;
-  /** 标题内容 */
-  title?: any;
-  /** 覆盖层内容 */
-  overlay?: any;
-}
-
-/**
- * 包装工具提示属性
- * 在基础TooltipProps上增加图标配置
- */
-export declare type WrapperTooltipProps = TooltipProps & {
-  /** 图标元素 */
-  icon?: any;
-};
-
-/**
- * 表单项标签属性接口
- * 用于配置表单项的标签显示
- */
-export interface FormItemLabelProps {
-  /** 是否显示冒号 */
-  colon?: boolean;
-  /** HTML for属性 */
-  htmlFor?: string;
-  /** 标签内容 */
-  label?: any | string;
-  /** 必填标记配置 */
-  requiredMark?: RequiredMark;
-}
 
 /**
  * ProField值类型与字段属性映射
@@ -433,7 +378,7 @@ export interface ProFieldValueTypeWithFieldProps {
  * 定义了表单项的通用配置
  * @template T 值类型，默认为any
  */
-export interface IZlFormItemProps<T = any> {
+export interface IAhFormItemProps<T = any> {
   /** 当前值 */
   value?: T;
   /** 值变化回调 */
@@ -575,125 +520,6 @@ export declare type ProSchemaValueEnumMap = Map<
 >;
 
 /**
- * 验证状态常量数组
- */
-declare const ValidateStatuses: [
-  "success",
-  "warning",
-  "error",
-  "validating",
-  ""
-];
-
-/**
- * 验证状态类型
- * 表示字段的验证结果状态
- */
-export declare type ValidateStatus = typeof ValidateStatuses[number];
-
-/**
- * 文件上传配置接口
- * 用于配置文件上传相关参数
- */
-export interface IUploadProps {
-  /** 上传组件引用 */
-  uploadRef?: any;
-  /**
-   * 业务场景枚举
-   * 用于区分不同的上传场景
-   */
-  busiScene?: string;
-  /**
-   * 权限枚举
-   * 基于ZlPermissionEnum的权限控制
-   */
-  permission?: string;
-  /** 文件大小限制，单位MB，默认10MB */
-  fileSize?: number;
-  /** 接受的文件类型 */
-  accept?: string;
-  /** 是否支持多文件上传 */
-  multiple?: boolean;
-}
-
-/**
- * 表单项属性接口
- * 继承标签属性和上传属性，提供完整的表单项配置
- */
-export interface FormItemProps extends FormItemLabelProps, IUploadProps {
-  /** 样式前缀 */
-  prefixCls?: string;
-  /** 是否无样式模式 */
-  noStyle?: boolean;
-  /** 内联样式 */
-  style?: any;
-  /** CSS类名 */
-  className?: string;
-  /** 子元素 */
-  children?: any;
-  /** 元素ID */
-  id?: string;
-  /** 是否有反馈效果 */
-  hasFeedback?: boolean;
-  /** 验证状态 */
-  validateStatus?: ValidateStatus;
-  /** 是否必填 */
-  required?: boolean;
-  /** 是否隐藏 */
-  hidden?: boolean;
-  /** 初始值 */
-  initialValue?: any;
-  /** 消息变量映射 */
-  messageVariables?: Record<string, string>;
-  /** 工具提示内容 */
-  tooltip?: any;
-  /** 字段键值 */
-  fieldKey?: (string | number | bigint) | (string | number | bigint)[];
-  /**
-   * 级联选择最少选择层级
-   * 如果不设置，则需要选择到最底层
-   */
-  minLevel?: number;
-  /**
-   * 点击事件回调
-   */
-  onPress?: () => void;
-  /**
-   * 可上传的文件数量限制
-   */
-  maxNum?: number;
-  /** 验证规则数组 */
-  rules?: BaseRule[];
-  /**
-   * 值格式化函数
-   * 用于显示时格式化值
-   */
-  format?: (value: any) => string;
-  /**
-   * 货币符号
-   * 用于金额类型字段
-   */
-  moneySymbol?: string;
-  /**
-   * 选项数组
-   * 用于选择类型字段
-   */
-  options?: IOptions<any>[];
-  /**
-   * 点击事件
-   */
-  onClick?: () => void;
-  /**
-   * 禁用
-   */
-  disabled?: boolean;
-  /**
-   * 占位
-   */
-  placeholder?: string;
-}
-
-/**
  * 依赖关系配置接口
  * 用于配置字段间的依赖逻辑
  */
@@ -721,61 +547,11 @@ export interface IDependent {
 }
 
 /**
- * 验证规则类型枚举
- * 定义了支持的数据类型验证
- */
-export type RuleType =
-  | "string" // 字符串
-  | "number" // 数字
-  | "boolean" // 布尔值
-  | "method" // 方法
-  | "regexp" // 正则表达式
-  | "integer" // 整数
-  | "float" // 浮点数
-  | "object" // 对象
-  | "enum" // 枚举
-  | "date" // 日期
-  | "url" // URL
-  | "hex" // 十六进制
-  | "email"; // 邮箱
-
-/**
- * 基础验证规则接口
- * 定义字段验证的各种规则配置
- */
-interface BaseRule {
-  /** 是否仅警告，不阻止提交 */
-  warningOnly?: boolean;
-  /** 枚举值数组 */
-  enum?: any[];
-  /** 精确长度 */
-  len?: number;
-  /** 最大值/长度 */
-  max?: number;
-  /** 错误消息 */
-  message?: string | any;
-  /** 最小值/长度 */
-  min?: number;
-  /** 正则表达式模式 */
-  pattern?: RegExp;
-  /** 是否必填 */
-  required?: boolean;
-  /** 值转换函数 */
-  transform?: (value: any) => any;
-  /** 验证类型 */
-  type?: RuleType;
-  /** 是否检查空白字符 */
-  whitespace?: boolean;
-  /** 自定义验证触发时机，必须是字段validateTrigger的子集 */
-  validateTrigger?: string | string[];
-}
-
-/**
- * ZlForm列配置接口
+ * 表单列配置接口
  * 定义表单列的完整配置选项
  * @template Entity 实体类型，默认为Record<string, any>
  */
-export interface IZlFormColumns<Entity = Record<string, any>> {
+export interface IAhFormColumns<Entity = Record<string, any>> {
   /**
    * 列的唯一标识符
    * 一般用于 dataIndex 重复的情况
@@ -827,7 +603,7 @@ export interface IZlFormColumns<Entity = Record<string, any>> {
   };
 
   /** 子列配置，用于嵌套表单结构 */
-  columns?: IZlFormColumns<Entity>[];
+  columns?: IAhFormColumns<Entity>[];
 
   /** 字段初始值 */
   initialValue?: any;
@@ -836,7 +612,7 @@ export interface IZlFormColumns<Entity = Record<string, any>> {
    * 请求远程数据的函数
    * 用于动态获取选项数据
    */
-  request?: IZlFormItemProps["request"];
+  request?: IAhFormItemProps["request"];
 
   /**
    * 是否禁用字段
@@ -945,16 +721,16 @@ export interface IZlFormColumns<Entity = Record<string, any>> {
 
 /**
  * 表单列接口
- * IZlFormColumns的别名，提供更简洁的命名
+ * IAhFormColumns的别名，提供更简洁的命名
  * @template T 实体类型，默认为any
  */
-export interface IFormColumns<T = any> extends IZlFormColumns<T> {}
+export interface IFormColumns<T = any> extends IAhFormColumns<T> {}
 
 /**
  * 级联选择器属性接口
  * 继承基础表单项属性，专门用于级联选择组件
  */
-export type IZlCascaderProps = IZlFormItemProps<string> & {
+export type IAhCascaderProps = IAhFormItemProps<string> & {
   /**
    * 选择模式
    * - multiple: 多选模式
