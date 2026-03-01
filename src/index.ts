@@ -11,6 +11,8 @@ export { default as asyncUtils } from './core/asyncUtils';
 export { default as colorUtils } from './core/colorUtils';
 export { default as cryptoUtils } from './core/cryptoUtils';
 export { default as pageUtils, defTableData } from './core/pageUtils';
+export { default as diffUtils } from './core/diffUtils';
+export { default as fileUtils } from './core/fileUtils';
 export { default as storageUtils } from './core/storageUtils';
 export * as constants from './core/constants';
 export type { ITablePage } from './core/pageUtils';

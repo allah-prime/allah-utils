@@ -11,3 +11,5 @@ export const fileUtils = {
     return re.test(fileExt);
   }
 };
+
+export default fileUtils;

@@ -9,6 +9,11 @@ import objectUtils from './objectUtils';
 import numberUtils from './numberUtils';
 import colorUtils from './colorUtils';
 import dateUtils from './dateUtils';
+import diffUtils from './diffUtils';
+import fileUtils from './fileUtils';
+import cryptoUtils from './cryptoUtils';
+import pageUtils from './pageUtils';
+import storageUtils from './storageUtils';
 import asyncUtils, { AsyncQueue } from './asyncUtils';
 import * as constants from './constants';
 import validationUtils from './validationUtils';
@@ -22,6 +27,11 @@ export default {
   objectUtils,
   numberUtils,
   dateUtils,
+  diffUtils,
+  fileUtils,
+  cryptoUtils,
+  pageUtils,
+  storageUtils,
   asyncUtils,
   colorUtils,
   validationUtils,

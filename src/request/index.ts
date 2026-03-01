@@ -1,6 +1,9 @@
-import { codeMessage } from './httpCode';
+import { codeMessage, defOption } from './httpCode';
 import { ICacheData, ICallBack, IRequestOption } from './typings';
 export type { IRequestOption, ICacheData, ICallBack };
+export { codeMessage, defOption };
+export { default as uniRequest } from './uniRequest';
+export { default as ReqQueue } from './ReqQueue';
 import { generateFetchRequest, getRequestUtils, requestErrorIntercept, responseErrorIntercept } from './httpUtils';
 import ReqQueue from './ReqQueue';
 import cryptoUtils from '../core/cryptoUtils';

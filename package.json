@@ -48,6 +48,20 @@
       "browser": "./dist/esm/form/index.js",
       "default": "./dist/esm/form/index.js"
     },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/types/index.js",
+      "require": "./dist/types/index.cjs",
+      "browser": "./dist/esm/types/index.js",
+      "default": "./dist/esm/types/index.js"
+    },
+    "./umijs": {
+      "types": "./dist/umijs/index.d.ts",
+      "import": "./dist/esm/umijs/index.js",
+      "require": "./dist/umijs/index.cjs",
+      "browser": "./dist/esm/umijs/index.js",
+      "default": "./dist/esm/umijs/index.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
@@ -65,6 +79,7 @@
     "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix",
     "type-check": "tsc --noEmit",
     "clean": "rimraf dist",
+    "check-exports": "node scripts/check-exports.mjs",
     "prepublishOnly": "pnpm run clean && pnpm run build && pnpm run test",
     "publish:npm": "npm publish --registry=https://registry.npmjs.org/",
     "publish:dry": "npm publish --dry-run",
