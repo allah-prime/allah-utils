@@ -299,6 +299,10 @@ const dateUtils = {
     }
     return res;
   },
+  /**
+   * 等待延迟x秒
+   */
+  delay: (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 };
 
 export const templateObj = {
