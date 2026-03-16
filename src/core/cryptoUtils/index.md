@@ -19,6 +19,10 @@ const uuidSync = cryptoUtils.uuidSync(); // 同步生成 UUID
 const hash = cryptoUtils.md5('hello');
 const encrypted = cryptoUtils.aesEncrypt('secret', 'key123');
 const decrypted = cryptoUtils.aesDecrypt(encrypted, 'key123');
+
+// 密码哈希与验证
+const hashed = cryptoUtils.hashPassword('mySecret123');
+const isValid = cryptoUtils.verifyPassword('mySecret123', hashed); // true
 ```
 
 ### API 属性
@@ -34,7 +38,10 @@ const decrypted = cryptoUtils.aesDecrypt(encrypted, 'key123');
 | generateRSAKeyPair | 生成 RSA 密钥对 | `(keySize?: number) => Promise<{ publicKey: string; privateKey: string } \| null>` | `1024` |
 | aesEncrypt | AES 加密 | `(text: string, key: string) => string` | - |
 | aesDecrypt | AES 解密 | `(encryptedText: string, key: string) => string` | - |
+| hashPassword | 密码哈希（PBKDF2-SHA256） | `(password: string, options?: { iterations?: number; keySize?: number }) => string` | `iterations:100000, keySize:8` |
+| verifyPassword | 验证密码哈希 | `(password: string, storedHash: string) => boolean` | - |
 
 ### 边界条件与异常
 * RSA 能力在浏览器与 Node.js 环境走不同实现，非对应环境将抛出错误
 * AES 解密若密钥错误或数据损坏会抛出异常
+* `verifyPassword` 若传入格式不合法的哈希字符串将返回 false

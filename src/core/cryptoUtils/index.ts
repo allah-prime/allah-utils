@@ -454,6 +454,74 @@ const cryptoUtils = {
       console.error('AES 解密失败:', error);
       throw new Error('AES 解密失败');
     }
+  },
+
+  /**
+   * 对密码进行哈希处理（PBKDF2-SHA256）
+   * 使用随机 128 位盐值与 PBKDF2-SHA256 算法生成安全的密码哈希，适用于用户密码存储场景。
+   * @param {string} password - 需要哈希的明文密码
+   * @param {object} [options] - 可选配置项
+   * @param {number} [options.iterations=100000] - PBKDF2 迭代次数，越高越安全但越慢，默认 100000
+   * @param {number} [options.keySize=8] - 输出密钥长度（以 32 位字为单位），默认 8（256 位）
+   * @returns {string} 返回格式为 `pbkdf2:iterations:keySize:salt:hash` 的哈希字符串
+   * @example
+   * ```typescript
+   * const hashed = cryptoUtils.hashPassword('mySecret123');
+   * console.log(hashed); // "pbkdf2:100000:8:a3f1...:<hash>"
+   * ```
+   */
+  hashPassword(password: string, options?: { iterations?: number; keySize?: number }): string {
+    const iterations = options?.iterations ?? 100000;
+    const keySize = options?.keySize ?? 8;
+    // 生成 128 位（16 字节）随机盐值
+    const salt = CryptoJS.lib.WordArray.random(16).toString();
+    const hash = CryptoJS.PBKDF2(password, salt, {
+      keySize,
+      iterations,
+      hasher: CryptoJS.algo.SHA256
+    }).toString();
+    return `pbkdf2:${iterations}:${keySize}:${salt}:${hash}`;
+  },
+
+  /**
+   * 验证密码是否与哈希值匹配（使用常量时间比较防止时序攻击）
+   * @param {string} password - 需要验证的明文密码
+   * @param {string} storedHash - 由 `hashPassword` 生成的哈希字符串
+   * @returns {boolean} 密码正确返回 true，否则返回 false
+   * @example
+   * ```typescript
+   * const hashed = cryptoUtils.hashPassword('mySecret123');
+   * const isValid = cryptoUtils.verifyPassword('mySecret123', hashed);
+   * console.log(isValid); // true
+   * const isWrong = cryptoUtils.verifyPassword('wrongPassword', hashed);
+   * console.log(isWrong); // false
+   * ```
+   */
+  verifyPassword(password: string, storedHash: string): boolean {
+    const parts = storedHash.split(':');
+    if (parts.length !== 5 || parts[0] !== 'pbkdf2') {
+      return false;
+    }
+    const [, iterationsStr, keySizeStr, salt, hash] = parts;
+    const iterations = parseInt(iterationsStr, 10);
+    const keySize = parseInt(keySizeStr, 10);
+    if (isNaN(iterations) || isNaN(keySize)) {
+      return false;
+    }
+    const computedHash = CryptoJS.PBKDF2(password, salt, {
+      keySize,
+      iterations,
+      hasher: CryptoJS.algo.SHA256
+    }).toString();
+    // 使用常量时间比较防止时序攻击
+    if (computedHash.length !== hash.length) {
+      return false;
+    }
+    let diff = 0;
+    for (let i = 0; i < computedHash.length; i++) {
+      diff |= computedHash.charCodeAt(i) ^ hash.charCodeAt(i);
+    }
+    return diff === 0;
   }
 };
 
