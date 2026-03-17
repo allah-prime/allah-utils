@@ -3,13 +3,13 @@
 ## 安装
 
 ```bash
-pnpm add allah-utils
+pnpm add @allahjs/utils
 ```
 
 ## 使用
 
 ```ts
-import { capitalize, formatDate, unique } from "allah-utils";
+import { capitalize, formatDate, unique } from "@allahjs/utils";
 ```
 
 ## 模块
