@@ -159,7 +159,12 @@ const imageUtils = {
    */
   base64ToBlob(base64: string, mimeType = 'image/png'): Blob {
     const data = base64.includes(',') ? base64.split(',')[1] : base64;
-    const byteString = atob(data);
+    let byteString: string;
+    try {
+      byteString = atob(data);
+    } catch {
+      throw new Error('Invalid base64 string provided');
+    }
     const ab = new ArrayBuffer(byteString.length);
     const ia = new Uint8Array(ab);
     for (let i = 0; i < byteString.length; i++) {

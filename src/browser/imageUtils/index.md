@@ -32,7 +32,7 @@ await imageUtils.downloadDomsAsZip([
 const input = document.querySelector<HTMLInputElement>('input[type=file]');
 if (input?.files?.[0]) {
   const compressed = await imageUtils.compressImage(input.files[0], 0.7);
-  imageUtils.downloadImage(URL.createObjectURL(compressed), 'compressed.jpg');
+  saveAs(compressed, 'compressed.jpg');
 }
 ```
 
