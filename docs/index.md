@@ -17,10 +17,10 @@ hero:
 ## 快速开始
 
 ```bash
-pnpm add allah-utils
+pnpm add @allahjs/utils
 ```
 
 ```ts
-import { capitalize } from 'allah-utils';
+import { capitalize } from '@allahjs/utils';
 console.log(capitalize('hello world'));
 ```
