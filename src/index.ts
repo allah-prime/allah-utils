@@ -21,6 +21,7 @@ export type { ITablePage } from './core/pageUtils';
 export { default as domUtils } from './browser/domUtils';
 export { default as cookieUtils } from './browser/cookieUtils';
 export { default as urlUtils } from './browser/urlUtils';
+export { default as imageUtils } from './browser/imageUtils';
 
 // 请求工具函数
 export { default as request } from './request';

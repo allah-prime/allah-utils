@@ -6,3 +6,4 @@
 export { default as cookieUtils } from './cookieUtils';
 export { default as domUtils } from './domUtils';
 export { default as urlUtils } from './urlUtils';
+export { default as imageUtils } from './imageUtils';
