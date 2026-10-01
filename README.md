@@ -19,8 +19,11 @@
 ## 安装
 
 ```bash
-# 使用 npm
+# 使用 pnpm
 pnpm install @allahjs/utils
+
+# 使用 npm
+npm install @allahjs/utils
 ```
 
 ## 使用方法
