@@ -10,6 +10,8 @@ export { default as validationUtils } from './core/validationUtils';
 export { default as asyncUtils } from './core/asyncUtils';
 export { default as colorUtils } from './core/colorUtils';
 export { default as cryptoUtils } from './core/cryptoUtils';
+export { default as rsaUtils } from './core/rsaUtils';
+export type { RSAHashAlgorithm } from './core/rsaUtils';
 export { default as pageUtils, defTableData, defaultTableData } from './core/pageUtils';
 export { default as diffUtils } from './core/diffUtils';
 export { default as fileUtils } from './core/fileUtils';

@@ -12,6 +12,7 @@ import dateUtils from './dateUtils';
 import diffUtils from './diffUtils';
 import fileUtils from './fileUtils';
 import cryptoUtils from './cryptoUtils';
+import rsaUtils from './rsaUtils';
 import pageUtils from './pageUtils';
 import storageUtils from './storageUtils';
 import asyncUtils, { AsyncQueue } from './asyncUtils';
@@ -30,6 +31,7 @@ export default {
   diffUtils,
   fileUtils,
   cryptoUtils,
+  rsaUtils,
   pageUtils,
   storageUtils,
   asyncUtils,
