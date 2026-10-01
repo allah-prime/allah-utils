@@ -280,3 +280,4 @@ MIT License
 
 - 初始版本发布
 - 包含字符串、数组、对象、日期、数字、验证、异步、DOM 等工具函数
+> 本包通过 semantic-release 自动发布，提交信息请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/) 规范。
